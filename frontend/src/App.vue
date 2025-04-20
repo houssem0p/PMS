@@ -23,7 +23,7 @@
     <main>
       <div v-if="currentView === 'intro'" class="intro-text">
         <h2>Welcome to the Patient Management System</h2>
-        <p>Efficiently manage patient information, schedule appointments, and keep track of all records in one place. It's simple, fast, and secure.</p>
+        <p>Efficiently manage patient information and keep track of all records in one place.</p>
         <p>Choose an option below to get started:</p>
       </div>
 
@@ -45,10 +45,7 @@ import PatientList from './components/PatientList.vue'
 
 export default {
   name: 'App',
-  components: {
-    AddPatient,
-    PatientList
-  },
+  components: { AddPatient, PatientList },
   data() {
     return {
       currentView: 'intro',
@@ -68,26 +65,23 @@ export default {
   }
 }
 </script>
+
 <style>
 #app {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', sans-serif;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9fafb;
+  background: #f9fafb;
   min-height: 100vh;
 }
 
-/* Header - Glass Morphism Effect */
 .header {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: #fff;
   padding: 24px;
   border-radius: 16px;
   margin-bottom: 32px;
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
   color: #111827;
 }
 
@@ -100,12 +94,14 @@ export default {
 .header-content h1 {
   margin: 0;
   font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.025em;
-  background: linear-gradient(90deg, #6366f1 0%, #8b5cf6 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  font-weight: 700;
+  color: #1f2937;
+  line-height: 1.2;
+  transition: transform 0.3s ease;
+}
+
+.header-content h1:hover {
+  transform: scale(1.02);
 }
 
 nav {
@@ -115,97 +111,62 @@ nav {
 }
 
 nav button {
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-  color: white;
+  background-color: #4f46e5;
+  color: #fff;
   border: none;
   padding: 12px 24px;
   font-size: 0.95rem;
-  border-radius: 12px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-weight: 600;
-  box-shadow: 0 4px 6px rgba(99, 102, 241, 0.15);
-  position: relative;
-  overflow: hidden;
-}
-
-nav button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-nav button:hover::before {
-  opacity: 1;
-}
-
-nav button.active {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  box-shadow: 0 10px 15px rgba(79, 70, 229, 0.3);
-  transform: translateY(-2px);
 }
 
 nav button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Main Content - Neumorphism Inspired */
+nav button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
 main {
-  background: #ffffff;
+  background: #fff;
   padding: 32px;
   border-radius: 24px;
   min-height: 400px;
-  box-shadow: 
-    0 4px 6px rgba(0, 0, 0, 0.03),
-    0 1px 2px rgba(0, 0, 0, 0.03);
-  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(229, 231, 235, 0.5);
-  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+  border: 1px solid #e5e7eb;
+  animation: fadeIn 0.6s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 main:hover {
-  box-shadow: 
-    0 10px 25px rgba(0, 0, 0, 0.05),
-    0 5px 10px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
 }
 
-/* Intro Text */
 .intro-text {
   text-align: center;
   margin-bottom: 40px;
 }
 
 .intro-text h2 {
-  font-size: 2.25rem;
-  font-weight: 800;
+  font-size: 2rem;
+  font-weight: 700;
   color: #111827;
   margin-bottom: 16px;
-  line-height: 1.2;
 }
 
 .intro-text p {
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   color: #4b5563;
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.6;
 }
 
-/* Premium Details */
-.divider {
-  height: 1px;
-  background: linear-gradient(90deg, rgba(229,231,235,0) 0%, rgba(156,163,175,0.5) 50%, rgba(229,231,235,0) 100%);
-  margin: 32px 0;
-}
-
-/* Animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -217,45 +178,29 @@ main:hover {
   }
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
   .header-content {
     align-items: flex-start;
   }
-  
+
   nav {
     flex-direction: column;
     width: 100%;
   }
-  
+
   nav button {
     width: 100%;
   }
-  
+
   .intro-text h2 {
     font-size: 1.75rem;
   }
-  
+
   main {
     padding: 24px;
   }
 }
 
-/* Micro-interactions */
-button, a {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/* Focus states */
 button:focus, input:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);

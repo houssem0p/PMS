@@ -2,7 +2,7 @@ const Patient = require('../models/patient');
 
 exports.createPatient = async (req, res) => {
     try {
-        // Basic validation
+       
         if (!req.body.first_name || !req.body.last_name || !req.body.date_of_birth || !req.body.gender) {
             return res.status(400).json({ error: 'Missing required fields' });
         }
@@ -25,7 +25,7 @@ exports.getAllPatients = async (req, res) => {
         } else {
             patients = await Patient.findAll();
         }
-        
+
         res.json(patients);
     } catch (error) {
         console.error(error);
