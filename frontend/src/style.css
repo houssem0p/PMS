@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 :root {
-  /* Color Palette */
+ 
   --primary: #4f46e5;
   --primary-light: #6366f1;
   --primary-dark: #4338ca;
@@ -21,18 +21,17 @@
   --gray-800: #1f2937;
   --gray-900: #111827;
 
-  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   
-  /* Transitions */
+ 
   --transition-all: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-transform: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-opacity: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
-  /* Border Radius */
+
   --radius-sm: 0.375rem;
   --radius: 0.5rem;
   --radius-md: 0.75rem;
@@ -49,7 +48,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Utility Classes */
+
 .glass-effect {
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
